@@ -1,5 +1,5 @@
 Módulo de Gestión de Biblioteca - Odoo 19
-Este módulo ha sido desarrollado como parte de la evaluación técnica para la posición de Desarrollador Odoo. Implementa un sistema completo para la gestión de catálogos de libros y control de préstamos.
+Implementación de un sistema para la gestión de catálogos de libros y control de préstamos.
 
 -------------------Características Principales
 Catálogo de Libros: Gestión de títulos, autores, ISBN y estados de disponibilidad.
