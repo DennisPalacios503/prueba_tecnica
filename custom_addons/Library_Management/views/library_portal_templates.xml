@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Agrega "Mis Préstamos" al portal home -->
     <template id="portal_my_home_library" inherit_id="portal.portal_my_home" priority="30">
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
-            <t t-call="portal.portal_docs_entry">
-                <t t-set="title">Mis Préstamos</t>
-                <t t-set="url">/my/library/loans</t>
-                <t t-set="count" t-value="loan_count"/>
-                <t t-set="placeholder_count">'loan_count'</t>
-            </t>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3">
+                <a href="/my/library/loans" class="card text-decoration-none h-100">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+                        <i class="fa fa-book fa-3x mb-2 text-primary"/>
+                        <p class="mb-0 fw-bold">Mis Préstamos</p>
+                    </div>
+                </a>
+            </div>
         </xpath>
     </template>
 
-    <!-- Página de préstamos -->
     <template id="portal_my_library_loans" name="Mis Préstamos">
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>

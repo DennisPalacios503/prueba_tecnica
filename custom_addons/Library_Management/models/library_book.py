@@ -60,3 +60,12 @@ class LibraryBook(models.Model):
                 if record.product_id:
                     record.product_id.available_in_pos = True
         return res
+    
+    def action_view_loans(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Préstamos',
+            'res_model': 'library.loan',
+            'view_mode': 'list,form',
+            'domain': [('book_id', '=', self.id)],
+        }

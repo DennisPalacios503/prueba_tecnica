@@ -9952,3 +9952,46 @@ psycopg2.errors.SerializationFailure: could not serialize access due to concurre
 2026-03-24 08:38:25,455 2908 INFO library odoo.service.server: Initiating shutdown 
 2026-03-24 08:38:25,455 2908 INFO library odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
 2026-03-24 08:38:25,455 2908 INFO library odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 1 connections  
+2026-03-25 16:28:28,514 2616 INFO ? odoo: Odoo version 19.0-20260321 
+2026-03-25 16:28:28,515 2616 INFO ? odoo: Using configuration file at c:\program files\odoo 19.0.20260321\server\odoo.conf 
+2026-03-25 16:28:28,515 2616 INFO ? odoo: addons paths: _NamespacePath(['C:\\Program Files\\Odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\users\\admin\\appdata\\local\\openerp s.a\\odoo\\addons\\19.0', 'c:\\program files\\odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\program files\\odoo 19.0.20260321\\server\\custom_addons', 'c:\\program files\\odoo 19.0.20260321\\server\\addons']) 
+2026-03-25 16:28:28,515 2616 INFO ? odoo: database: odoo@localhost:5432 
+2026-03-25 16:28:30,029 2616 INFO ? odoo.service.server: HTTP service (werkzeug) running on Dennis:8069 
+2026-03-25 16:28:30,278 2616 INFO library odoo.modules.loading: loading 1 modules... 
+2026-03-25 16:28:30,288 2616 INFO library odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-03-25 16:28:30,346 2616 INFO library odoo.modules.loading: updating modules list 
+2026-03-25 16:28:30,354 2616 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-03-25 16:28:33,531 2616 WARNING library odoo.modules.loading: invalid module names, ignored: library_management 
+2026-03-25 16:28:33,580 2616 INFO library odoo.modules.loading: loading 77 modules... 
+2026-03-25 16:28:36,357 2616 INFO library odoo.modules.loading: 77 modules loaded in 2.78s, 0 queries (+0 extra) 
+2026-03-25 16:28:38,855 2616 INFO library odoo.modules.loading: Modules loaded. 
+2026-03-25 16:28:38,897 2616 INFO library odoo.registry: Registry changed, signaling through the database 
+2026-03-25 16:28:38,902 2616 INFO library odoo.registry: Registry loaded in 8.870s 
+2026-03-25 16:47:27,377 2616 INFO library odoo.service.server: Initiating shutdown 
+2026-03-25 16:47:27,377 2616 INFO library odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-03-25 16:47:27,494 2616 INFO ? odoo.service.server: cron0 max age (0s) reached, releasing connection. 
+2026-03-25 16:47:27,494 2616 INFO library odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 3 connections  
+2026-03-25 16:47:27,505 2616 INFO ? odoo.service.server: cron1 max age (0s) reached, releasing connection. 
+2026-03-25 16:48:07,190 16360 INFO ? odoo: Odoo version 19.0-20260321 
+2026-03-25 16:48:07,190 16360 INFO ? odoo: Using configuration file at c:\program files\odoo 19.0.20260321\server\odoo.conf 
+2026-03-25 16:48:07,190 16360 INFO ? odoo: addons paths: _NamespacePath(['C:\\Program Files\\Odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\users\\admin\\appdata\\local\\openerp s.a\\odoo\\addons\\19.0', 'c:\\program files\\odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\program files\\odoo 19.0.20260321\\server\\custom_addons', 'c:\\program files\\odoo 19.0.20260321\\server\\addons']) 
+2026-03-25 16:48:07,191 16360 INFO ? odoo: database: odoo@localhost:5432 
+2026-03-25 16:48:08,683 16360 INFO ? odoo.service.server: HTTP service (werkzeug) running on Dennis:8069 
+2026-03-25 16:48:08,952 16360 INFO library odoo.modules.loading: loading 1 modules... 
+2026-03-25 16:48:08,960 16360 INFO library odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-03-25 16:48:09,017 16360 INFO library odoo.modules.loading: updating modules list 
+2026-03-25 16:48:09,024 16360 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-03-25 16:48:12,131 16360 WARNING library odoo.modules.loading: invalid module names, ignored: library_management 
+2026-03-25 16:48:12,162 16360 INFO library odoo.modules.loading: loading 77 modules... 
+2026-03-25 16:48:14,606 16360 INFO library odoo.modules.loading: 77 modules loaded in 2.44s, 0 queries (+0 extra) 
+2026-03-25 16:48:16,859 16360 INFO library odoo.modules.loading: Modules loaded. 
+2026-03-25 16:48:16,893 16360 INFO library odoo.registry: Registry changed, signaling through the database 
+2026-03-25 16:48:16,894 16360 INFO library odoo.registry: Registry loaded in 8.210s 
+2026-03-25 17:02:17,377 16360 INFO library odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-03-25 17:02:17,664 16360 INFO library odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.28s) 
+2026-03-25 17:02:17,711 16360 INFO library odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-03-25 17:02:17,755 16360 INFO library odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.05s) 
+2026-03-25 17:14:44,891 16360 INFO library odoo.service.server: Initiating shutdown 
+2026-03-25 17:14:44,892 16360 INFO library odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-03-25 17:14:44,924 16360 INFO ? odoo.service.server: cron0 max age (0s) reached, releasing connection. 
+2026-03-25 17:14:44,925 16360 INFO library odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 3 connections  
