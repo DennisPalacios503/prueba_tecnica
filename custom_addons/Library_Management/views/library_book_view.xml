@@ -6,7 +6,28 @@
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <form string="Libro">
+                <header>
+                    <button name="action_create_loan"
+                            string="Registrar Préstamo"
+                            type="object"
+                            class="btn-primary"
+                            invisible="not is_available"/>
+                    <button name="action_create_loan"
+                            string="No Disponible"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="is_available"
+                            disabled="1"/>
+                </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(action_library_loan)d"
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-book">
+                            <field name="loan_count" widget="statinfo" string="Préstamos"/>
+                        </button>
+                    </div>
                     <group>
                         <group>
                             <field name="name"/>
@@ -15,9 +36,9 @@
                         </group>
                         <group>
                             <field name="publication_date"/>
-                            <field name="years_since_publication"/>
-                            <field name="product_id" options="{'no_create': True}"/>
+                            <field name="years_since_publication" readonly="1"/>
                             <field name="is_available" widget="boolean_toggle"/>
+                            <field name="product_id" options="{'no_create': True}"/>
                         </group>
                     </group>
                 </sheet>
@@ -33,7 +54,6 @@
                 <field name="name"/>
                 <field name="author"/>
                 <field name="isbn"/>
-                <field name="product_id"/>
                 <field name="publication_date"/>
                 <field name="years_since_publication"/>
                 <field name="is_available" widget="boolean_toggle"/>
@@ -47,7 +67,7 @@
         <field name="arch" type="xml">
             <search string="Buscar Libros">
                 <field name="name" string="Título"/>
-                <field name="author" string="Autor"/>
+                <field name="author" string="Filtrar por Autor"/>
                 <filter name="available" string="Disponibles"
                         domain="[('is_available', '=', True)]"/>
                 <filter name="not_available" string="No Disponibles"
@@ -68,9 +88,7 @@
         <field name="search_view_id" ref="view_library_book_search"/>
     </record>
 
-    <menuitem id="menu_library_root"
-              name="Biblioteca"
-              sequence="10"/>
+    <menuitem id="menu_library_root" name="Biblioteca" sequence="10"/>
 
     <menuitem id="menu_library_books"
               name="Catálogo de Libros"

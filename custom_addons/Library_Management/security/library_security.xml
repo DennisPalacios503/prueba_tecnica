@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="group_library_user" model="res.groups">
-            <field name="name">Library User</field>
+        <!-- Grupo: Bibliotecario (control total) -->
+        <record id="group_library_manager" model="res.groups">
+            <field name="name">Bibliotecario</field>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
-        <record id="group_library_manager" model="res.groups">
-            <field name="name">Library Manager</field>
-            <field name="implied_ids" eval="[(4, ref('group_library_user'))]"/>
+        <!-- Grupo: Usuario Público (solo lectura de libros disponibles) -->
+        <record id="group_library_user" model="res.groups">
+            <field name="name">Usuario Público Biblioteca</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        </record>
+
+        <!-- Regla: Usuario Público solo ve libros disponibles -->
+        <record id="rule_library_book_public" model="ir.rule">
+            <field name="name">Libros: solo disponibles para Usuario Público</field>
+            <field name="model_id" ref="model_library_book"/>
+            <field name="groups" eval="[(4, ref('group_library_user'))]"/>
+            <field name="domain_force">[('is_available', '=', True)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
         </record>
     </data>
 </odoo>

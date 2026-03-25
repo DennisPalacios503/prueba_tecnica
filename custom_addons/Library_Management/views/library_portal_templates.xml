@@ -1,35 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!-- Agrega "Mis Préstamos" al portal home -->
+    <template id="portal_my_home_library" inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Mis Préstamos</t>
+                <t t-set="url">/my/library/loans</t>
+                <t t-set="count" t-value="loan_count"/>
+                <t t-set="placeholder_count">'loan_count'</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Página de préstamos -->
     <template id="portal_my_library_loans" name="Mis Préstamos">
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">Mis Préstamos</t>
             </t>
-            <table class="table table-hover">
-                <thead>
-                    <tr class="active">
-                        <th>Libro</th>
-                        <th>Fecha Préstamo</th>
-                        <th>Estado</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <t t-foreach="loans" t-as="loan">
-                        <tr>
-                            <td><t t-out="loan.book_id.name"/></td>
-                            <td><t t-out="loan.loan_date"/></td>
-                            <td><span t-field="loan.state" class="badge rounded-pill text-bg-info"/></td>
-                            <td>
-                                <a t-if="loan.state != 'overdue'" 
-                                   t-attf-href="/my/library/renew/{{loan.id}}" 
-                                   class="btn btn-sm btn-primary">Renovar</a>
-                            </td>
-                        </tr>
-                    </t>
-                </tbody>
-            </table>
+            <div class="container mt-4">
+                <t t-if="not loans">
+                    <p class="text-muted">No tienes préstamos activos.</p>
+                </t>
+                <t t-else="">
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Libro</th>
+                                <th>Fecha Préstamo</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="loans" t-as="loan">
+                                <tr>
+                                    <td><t t-out="loan.book_id.name"/></td>
+                                    <td><t t-out="loan.loan_date"/></td>
+                                    <td>
+                                        <span t-att-class="'badge ' + ('bg-danger' if loan.state == 'overdue' else 'bg-success' if loan.state == 'returned' else 'bg-info')">
+                                            <t t-out="dict(active='Activo', returned='Devuelto', overdue='Vencido').get(loan.state, loan.state)"/>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <a t-if="loan.state == 'active'"
+                                           t-attf-href="/my/library/renew/#{loan.id}"
+                                           class="btn btn-sm btn-primary">Renovar</a>
+                                        <span t-else="" class="text-muted">—</span>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+            </div>
         </t>
     </template>
+
 </odoo>

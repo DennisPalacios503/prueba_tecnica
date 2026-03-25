@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 from odoo import models, fields, api
 from datetime import date
 
@@ -7,28 +7,26 @@ class LibraryBook(models.Model):
     _name = 'library.book'
     _description = 'Libro de Biblioteca'
 
-    name = fields.Char(
-        string='Título',
-        required=True,
-    )
-    author = fields.Char(
-        string='Autor',
-        required=True,
-    )
-    isbn = fields.Char(
-        string='ISBN',
-    )
-    publication_date = fields.Date(
-        string='Fecha de Publicación',
-    )
+    name = fields.Char(string='Título', required=True)
+    author = fields.Char(string='Autor', required=True)
+    isbn = fields.Char(string='ISBN')
+    publication_date = fields.Date(string='Fecha de Publicación')
     years_since_publication = fields.Integer(
         string='Años desde Publicación',
         compute='_compute_years_since_publication',
         store=False,
     )
-    is_available = fields.Boolean(
-        string='Disponible',
-        default=True,
+    is_available = fields.Boolean(string='Disponible', default=True)
+    loan_ids = fields.One2many('library.loan', 'book_id', string='Préstamos')
+    loan_count = fields.Integer(
+        string='Total Préstamos',
+        compute='_compute_loan_count',
+    )
+    # Producto opcional para POS
+    product_id = fields.Many2one(
+        'product.product',
+        string='Producto POS',
+        help='Producto asociado para operar desde el Punto de Venta.',
     )
 
     @api.depends('publication_date')
@@ -40,15 +38,25 @@ class LibraryBook(models.Model):
             else:
                 record.years_since_publication = 0
 
-    product_id = fields.Many2one('product.product', string='Producto Relacionado', required=True)
-    
+    @api.depends('loan_ids')
+    def _compute_loan_count(self):
+        for record in self:
+            record.loan_count = len(record.loan_ids)
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        for vals in vals_list:
-            # Solo intentamos modificar el producto si realmente se envió un ID
-            if vals.get('product_id'):
-                product = self.env['product.product'].browse(vals['product_id'])
-                if product.exists():
-                    product.available_in_pos = True
-        return super().create(vals_list)
+    def action_create_loan(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Nuevo Préstamo',
+            'res_model': 'library.loan',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {'default_book_id': self.id},
+        }
+
+    def write(self, vals):
+        res = super().write(vals)
+        if 'product_id' in vals:
+            for record in self:
+                if record.product_id:
+                    record.product_id.available_in_pos = True
+        return res
