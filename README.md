@@ -1,37 +1,50 @@
-# Odoo
+Módulo de Gestión de Biblioteca - Odoo 19
+Implementación de un sistema para la gestión de catálogos de libros y control de préstamos.
 
-[![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
-[![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/master)
-[![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)
-[![Nightly Builds](https://img.shields.io/badge/master-nightly-875A7B.svg?style=flat&colorA=8F8F8F)](https://nightly.odoo.com/)
+-------------------Características Principales
+Catálogo de Libros: Gestión de títulos, autores, ISBN y estados de disponibilidad.
 
-Odoo is a suite of web based open source business apps.
+Cálculo Automático: Implementación de campos computados para determinar los años transcurridos desde la publicación.
 
-The main Odoo Apps include an [Open Source CRM](https://www.odoo.com/page/crm),
-[Website Builder](https://www.odoo.com/app/website),
-[eCommerce](https://www.odoo.com/app/ecommerce),
-[Warehouse Management](https://www.odoo.com/app/inventory),
-[Project Management](https://www.odoo.com/app/project),
-[Billing &amp; Accounting](https://www.odoo.com/app/accounting),
-[Point of Sale](https://www.odoo.com/app/point-of-sale-shop),
-[Human Resources](https://www.odoo.com/app/employees),
-[Marketing](https://www.odoo.com/app/social-marketing),
-[Manufacturing](https://www.odoo.com/app/manufacturing),
-[...](https://www.odoo.com/)
+Gestión de Préstamos: Registro de préstamos vinculados a miembros de la biblioteca con validaciones de fechas.
 
-Odoo Apps can be used as stand-alone applications, but they also integrate seamlessly so you get
-a full-featured [Open Source ERP](https://www.odoo.com) when you install several Apps.
+Automatización (Cron): Tarea programada diaria para verificar libros vencidos y preparar notificaciones.
 
-## Getting started with Odoo
+Integración con Productos: Sincronización con el modelo product.product para disponibilidad en otros módulos (como POS).
 
-For a standard installation please follow the [Setup instructions](https://www.odoo.com/documentation/master/administration/install/install.html)
-from the documentation.
+Seguridad: Definición de grupos de acceso para Usuarios y Administradores de la Biblioteca.
 
-To learn the software, we recommend the [Odoo eLearning](https://www.odoo.com/slides),
-or [Scale-up, the business game](https://www.odoo.com/page/scale-up-business-game).
-Developers can start with [the developer tutorials](https://www.odoo.com/documentation/master/developer/howtos.html).
 
-## Security
 
-If you believe you have found a security issue, check our [Responsible Disclosure page](https://www.odoo.com/security-report)
-for details and get in touch with us via email.
+-------------------------------------- Requisitos e Instalación
+Versión de Odoo: Diseñado y testeado específicamente para Odoo 19.0.
+
+Dependencias: Requiere el módulo base mail y product.
+
+Instalación:
+
+Copiar la carpeta library_management en el directorio de custom_addons.
+
+Actualizar la lista de aplicaciones en el modo desarrollador de Odoo.
+
+Instalar el módulo desde la interfaz o mediante terminal:
+
+PowerShell
+python odoo-bin -d nombre_base_datos -i library_management
+
+
+
+------------------------------- Estructura del Proyecto
+models/: Definición de la lógica de negocio (library.book, library.loan).
+
+views/: Archivos XML para la interfaz de usuario (Formularios, Listas, Búsquedas).
+
+data/: Configuración de la tarea programada (Cron) y plantillas de correo.
+
+security/: Definición de permisos y reglas de acceso (ACL).
+
+
+------------------------------ Notas de Desarrollo (Puntos Clave)
+Compatibilidad Odoo 19: Se eliminó el uso del campo obsoleto numbercall en las tareas programadas, optando por la configuración estándar de la versión 19.
+
+Lógica de Negocio: El método create en los libros asegura que el producto relacionado sea marcado como disponible en el Punto de Venta automáticamente.
