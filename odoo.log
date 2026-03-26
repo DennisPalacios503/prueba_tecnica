@@ -9995,3 +9995,101 @@ psycopg2.errors.SerializationFailure: could not serialize access due to concurre
 2026-03-25 17:14:44,892 16360 INFO library odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
 2026-03-25 17:14:44,924 16360 INFO ? odoo.service.server: cron0 max age (0s) reached, releasing connection. 
 2026-03-25 17:14:44,925 16360 INFO library odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 3 connections  
+2026-03-26 04:25:37,628 20932 INFO ? odoo: Odoo version 19.0-20260321 
+2026-03-26 04:25:37,630 20932 INFO ? odoo: Using configuration file at c:\program files\odoo 19.0.20260321\server\odoo.conf 
+2026-03-26 04:25:37,630 20932 INFO ? odoo: addons paths: _NamespacePath(['C:\\Program Files\\Odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\users\\admin\\appdata\\local\\openerp s.a\\odoo\\addons\\19.0', 'c:\\program files\\odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\program files\\odoo 19.0.20260321\\server\\custom_addons', 'c:\\program files\\odoo 19.0.20260321\\server\\addons']) 
+2026-03-26 04:25:37,630 20932 INFO ? odoo: database: odoo@localhost:5432 
+2026-03-26 04:25:38,474 20932 INFO ? odoo.service.server: HTTP service (werkzeug) running on Dennis:8069 
+2026-03-26 04:25:38,574 20932 INFO library odoo.modules.loading: loading 1 modules... 
+2026-03-26 04:25:38,579 20932 INFO library odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-03-26 04:25:38,610 20932 INFO library odoo.modules.loading: updating modules list 
+2026-03-26 04:25:38,614 20932 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-03-26 04:25:40,124 20932 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Library Management'] to user __system__ #1 via n/a 
+2026-03-26 04:25:40,124 20932 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Library Management'] to user __system__ #1 via n/a 
+2026-03-26 04:25:41,368 20932 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2026-03-26 04:25:41,430 20932 INFO library odoo.modules.loading: loading 77 modules... 
+2026-03-26 04:25:42,852 20932 INFO library odoo.modules.loading: Loading module library_management (76/77) 
+2026-03-26 04:25:43,126 20932 INFO library odoo.registry: module library_management: creating or updating database tables 
+2026-03-26 04:25:43,305 20932 INFO library odoo.modules.loading: loading library_management/security/library_security.xml 
+2026-03-26 04:25:43,328 20932 INFO library odoo.modules.loading: loading library_management/security/ir.model.access.csv 
+2026-03-26 04:25:43,344 20932 INFO library odoo.modules.loading: loading library_management/data/library_sequence.xml 
+2026-03-26 04:25:43,347 20932 INFO library odoo.modules.loading: loading library_management/data/ir_cron.xml 
+2026-03-26 04:25:43,351 20932 INFO library odoo.modules.loading: loading library_management/data/library_data.xml 
+2026-03-26 04:25:43,357 20932 INFO library odoo.modules.loading: loading library_management/views/library_member_view.xml 
+2026-03-26 04:25:43,453 20932 INFO library odoo.modules.loading: loading library_management/views/library_book_view.xml 
+2026-03-26 04:25:43,507 20932 INFO library odoo.modules.loading: loading library_management/views/library_loan_view.xml 
+2026-03-26 04:25:43,536 20932 INFO library odoo.modules.loading: loading library_management/views/library_portal_templates.xml 
+2026-03-26 04:25:43,587 20932 INFO library odoo.modules.loading: Module library_management loaded in 0.73s, 289 queries (+289 other) 
+2026-03-26 04:25:43,597 20932 INFO library odoo.modules.loading: 77 modules loaded in 2.17s, 289 queries (+289 extra) 
+2026-03-26 04:25:44,089 20932 INFO library odoo.registry: verifying fields for every extended model 
+2026-03-26 04:25:45,129 20932 INFO library odoo.modules.loading: Modules loaded. 
+2026-03-26 04:25:45,147 20932 INFO library odoo.registry: Registry changed, signaling through the database 
+2026-03-26 04:25:45,149 20932 INFO library odoo.registry: Registry loaded in 6.673s 
+2026-03-26 04:25:45,153 20932 INFO library odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2026-03-26 04:25:45,365 20932 INFO library werkzeug: 127.0.0.1 - - [26/Mar/2026 04:25:45] "GET /websocket?version=19.0-2 HTTP/1.1" 101 - 9 0.007 6.850
+2026-03-26 04:25:45,753 20932 INFO library werkzeug: 127.0.0.1 - - [26/Mar/2026 04:25:45] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.014 0.055
+2026-03-26 04:25:45,774 20932 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2026-03-26 04:25:51,872 20932 INFO library odoo.service.server: Initiating shutdown 
+2026-03-26 04:25:51,872 20932 INFO library odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-03-26 04:25:52,911 20932 INFO ? odoo.service.server: cron0 max age (0s) reached, releasing connection. 
+2026-03-26 04:25:52,911 20932 INFO library odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 4 connections  
+2026-03-26 04:25:52,921 20932 INFO ? odoo.service.server: cron1 max age (0s) reached, releasing connection. 
+2026-03-26 04:26:01,051 20932 INFO library werkzeug: 127.0.0.1 - - [26/Mar/2026 04:26:01] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.010 0.054
+2026-03-26 04:26:50,614 10940 INFO ? odoo: Odoo version 19.0-20260321 
+2026-03-26 04:26:50,615 10940 INFO ? odoo: Using configuration file at c:\program files\odoo 19.0.20260321\server\odoo.conf 
+2026-03-26 04:26:50,615 10940 INFO ? odoo: addons paths: _NamespacePath(['C:\\Program Files\\Odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\users\\admin\\appdata\\local\\openerp s.a\\odoo\\addons\\19.0', 'c:\\program files\\odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\program files\\odoo 19.0.20260321\\server\\custom_addons', 'c:\\program files\\odoo 19.0.20260321\\server\\addons']) 
+2026-03-26 04:26:50,615 10940 INFO ? odoo: database: odoo@localhost:5432 
+2026-03-26 04:26:51,542 10940 INFO ? odoo.service.server: HTTP service (werkzeug) running on Dennis:8069 
+2026-03-26 04:26:51,645 10940 INFO library odoo.modules.loading: loading 1 modules... 
+2026-03-26 04:26:51,650 10940 INFO library odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-03-26 04:26:51,682 10940 INFO library odoo.modules.loading: updating modules list 
+2026-03-26 04:26:51,685 10940 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-03-26 04:26:53,458 10940 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Library Management'] to user __system__ #1 via n/a 
+2026-03-26 04:26:53,458 10940 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Library Management'] to user __system__ #1 via n/a 
+2026-03-26 04:26:54,782 10940 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2026-03-26 04:26:54,843 10940 INFO library odoo.modules.loading: loading 77 modules... 
+2026-03-26 04:26:56,172 10940 INFO library odoo.modules.loading: Loading module library_management (76/77) 
+2026-03-26 04:26:56,434 10940 INFO library odoo.registry: module library_management: creating or updating database tables 
+2026-03-26 04:26:56,605 10940 INFO library odoo.modules.loading: loading library_management/security/library_security.xml 
+2026-03-26 04:26:56,624 10940 INFO library odoo.modules.loading: loading library_management/security/ir.model.access.csv 
+2026-03-26 04:26:56,639 10940 INFO library odoo.modules.loading: loading library_management/data/library_sequence.xml 
+2026-03-26 04:26:56,642 10940 INFO library odoo.modules.loading: loading library_management/data/ir_cron.xml 
+2026-03-26 04:26:56,646 10940 INFO library odoo.modules.loading: loading library_management/data/library_data.xml 
+2026-03-26 04:26:56,650 10940 INFO library odoo.modules.loading: loading library_management/views/library_member_view.xml 
+2026-03-26 04:26:56,733 10940 INFO library odoo.modules.loading: loading library_management/views/library_book_view.xml 
+2026-03-26 04:26:56,777 10940 INFO library odoo.modules.loading: loading library_management/views/library_loan_view.xml 
+2026-03-26 04:26:56,804 10940 INFO library odoo.modules.loading: loading library_management/views/library_portal_templates.xml 
+2026-03-26 04:26:56,852 10940 INFO library odoo.modules.loading: Module library_management loaded in 0.68s, 289 queries (+289 other) 
+2026-03-26 04:26:56,862 10940 INFO library odoo.modules.loading: 77 modules loaded in 2.02s, 289 queries (+289 extra) 
+2026-03-26 04:26:57,320 10940 INFO library odoo.registry: verifying fields for every extended model 
+2026-03-26 04:26:58,054 10940 INFO library odoo.modules.loading: Modules loaded. 
+2026-03-26 04:26:58,072 10940 INFO library odoo.registry: Registry changed, signaling through the database 
+2026-03-26 04:26:58,074 10940 INFO library odoo.registry: Registry loaded in 6.529s 
+2026-03-26 04:26:58,077 10940 INFO library odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2026-03-26 04:26:58,281 10940 INFO library werkzeug: 127.0.0.1 - - [26/Mar/2026 04:26:58] "GET /websocket?version=19.0-2 HTTP/1.1" 101 - 9 0.006 6.338
+2026-03-26 04:26:58,632 10940 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2026-03-26 04:26:58,714 10940 INFO library werkzeug: 127.0.0.1 - - [26/Mar/2026 04:26:58] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.011 0.097
+2026-03-26 04:27:58,241 10940 INFO library odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) starting 
+2026-03-26 04:27:58,747 10940 INFO library odoo.models.unlink: User #1 deleted res.config.settings records with IDs: [12] 
+2026-03-26 04:27:58,777 10940 INFO library odoo.addons.base.models.res_users: GC 'auth_totp.device' delete 0 entries 
+2026-03-26 04:27:58,844 10940 INFO library odoo.addons.base.models.res_device: GC device logs delete 0 entries 
+2026-03-26 04:27:59,029 10940 INFO library odoo.addons.base.models.res_device: GC device logs delete 0 entries 
+2026-03-26 04:27:59,065 10940 INFO library odoo.addons.api_doc.models.ir_attachment: GC'd 0 /doc cached index 
+2026-03-26 04:27:59,163 10940 INFO library odoo.addons.sms.models.sms_sms: GC'd 0 sms marked for deletion 
+2026-03-26 04:27:59,179 10940 INFO library odoo.addons.base.models.res_users: GC 'res.users.apikeys' delete 0 entries 
+2026-03-26 04:27:59,300 10940 INFO library odoo.addons.base.models.ir_attachment: filestore gc 0 checked, 0 removed 
+2026-03-26 04:27:59,352 10940 INFO library odoo.addons.base.models.res_users: GC'd 0 user log entries 
+2026-03-26 04:27:59,424 10940 INFO library odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) fully done (#loop 1; done 133; remaining 0; duration 1.19s) 
+2026-03-26 04:33:27,573 10940 INFO library odoo.service.server: Initiating shutdown 
+2026-03-26 04:33:27,573 10940 INFO library odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-03-26 04:33:28,019 10940 INFO ? odoo.service.server: cron0 max age (0s) reached, releasing connection. 
+2026-03-26 04:33:28,019 10940 INFO library odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 5 connections  
+2026-03-26 04:38:45,751 14508 INFO ? odoo: Odoo version 19.0-20260321 
+2026-03-26 04:38:45,751 14508 INFO ? odoo: Using configuration file at c:\program files\odoo 19.0.20260321\server\odoo.conf 
+2026-03-26 04:38:45,751 14508 INFO ? odoo: addons paths: _NamespacePath(['C:\\Program Files\\Odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\users\\admin\\appdata\\local\\openerp s.a\\odoo\\addons\\19.0', 'c:\\program files\\odoo 19.0.20260321\\server\\odoo\\addons', 'c:\\program files\\odoo 19.0.20260321\\server\\custom_addons', 'c:\\program files\\odoo 19.0.20260321\\server\\addons']) 
+2026-03-26 04:38:45,751 14508 INFO ? odoo: database: odoo@localhost:5432 
+2026-03-26 04:38:46,968 14508 INFO ? odoo.service.server: HTTP service (werkzeug) running on Dennis:8069 
+2026-03-26 04:38:47,093 14508 INFO library odoo.modules.loading: loading 1 modules... 
+2026-03-26 04:38:47,099 14508 INFO library odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-03-26 04:38:47,136 14508 INFO library odoo.modules.loading: updating modules list 
+2026-03-26 04:38:47,140 14508 INFO library odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 

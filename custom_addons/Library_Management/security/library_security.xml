@@ -4,13 +4,11 @@
         <!-- Grupo: Bibliotecario (control total) -->
         <record id="group_library_manager" model="res.groups">
             <field name="name">Bibliotecario</field>
-            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <!-- Grupo: Usuario Público (solo lectura de libros disponibles) -->
         <record id="group_library_user" model="res.groups">
             <field name="name">Usuario Público Biblioteca</field>
-            <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
         </record>
 
         <!-- Regla: Usuario Público solo ve libros disponibles -->
